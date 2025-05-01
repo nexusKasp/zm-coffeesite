@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог кофе | ZM Coffee</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="circe-webfont/style.css">
+
+</head>
+<body>
+    <div class="loader" style="background-color: rgb(15, 57, 33);">
+        <div class="loader-logo"><img  src="img/logo/logo.png" class="hero__logo"></div>
+    </div>
+    <div class="modal" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close modal">×</button>
+            <h2 class="modal__title" id="auth-modal-title">Вход</h2>
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <input type="text" id="login-email"  placeholder=" ">
+                    <label for="login-email">Email или телефон</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder=" ">
+                    <label for="login-password">Пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="login-password">👁️</span>
+                </div>
+                <button type="submit" class="btn btn--primary btn-hover-effect">Войти</button>
+                <p class="auth-form__footer">Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <div class="modal" id="reg-modal" role="dialog" aria-labelledby="reg-modal-title" aria-hidden="true">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close modal">×</button>
+            <h2 class="modal__title" id="reg-modal-title">Регистрация</h2>
+            <form class="auth-form" id="register-form">
+                <div class="form-group">
+                    <input type="text" id="reg-name" placeholder=" ">
+                    <label for="reg-name">Имя</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="reg-phone" placeholder=" ">
+                    <label for="reg-phone">Телефон</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="reg-email" placeholder=" ">
+                    <label for="reg-email">Email</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-password"  placeholder=" ">
+                    <label for="reg-password">Пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="reg-password">👁️</span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-confirm" placeholder=" ">
+                    <label for="reg-confirm">Подтвердите пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="reg-confirm">👁️</span>
+                </div>
+                <button type="submit" class="btn btn--primary btn-hover-effect">Зарегистрироваться</button>
+                <p class="auth-form__footer">Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a></p>
+            </form>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img src="img/logo/logo2.svg" alt="ZM Coffee logo" >
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="index.html#menu" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="catalog.html" class="nav__link">Меню</a></li>
+                    <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                    <li class="nav__item"><a href="index.html#reviews" class="nav__link">Отзывы</a></li>
+                    <li class="nav__item"><a href="index.html#contacts" class="nav__link">Новости</a></li>
+                </ul>
+            </nav>
+            <div class="header__auth">
+                <button class="btn btn--outline auth-btn btn-hover-effect" id="login-btn">Войти</button>
+                <button class="btn btn--primary auth-btn btn-hover-effect" id="register-btn">Регистрация</button>
+            </div>
+            <button class="burger" id="burger">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="catalog">
+        <section class="catalog-hero">
+            <div class="container">
+                <div class="hero__content">
+                    <img  src="img/logo/logo.png" class="hero__logo">
+                </div>
+                <h1 class="catalog-hero__title animate-on-scroll">Каталог кофе</h1>
+                <p class="catalog-hero__subtitle animate-on-scroll delay-1">Выберите свой идеальный вкус</p>
+            </div>
+        </section>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-container">
+                <p class="marquee">
+                    <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                    
+                    ZM COFFEE ZM COFFEE 
+                    
+                    <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                    
+                    ZM COFFEE ZM COFFEE 
+                    
+                    <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                    
+                    ZM COFFEE ZM COFFEE 
+    
+                    <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                </p>
+            </div>
+        </div>
+    
+
+        <section class="catalog-content">
+            <div class="container">
+                <div class="catalog-filters animate-on-scroll">
+                    <div class="filter-group">
+                        <label for="coffee-type" class="filter-label">Тип кофе</label>
+                        <select id="coffee-type" class="filter-select">
+                            <option value="all">Все</option>
+                            <option value="espresso">Эспрессо-напитки</option>
+                            <option value="filter">Фильтр-кофе</option>
+                            <option value="special">Специальные</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="coffee-origin" class="filter-label">Происхождение</label>
+                        <select id="coffee-origin" class="filter-select">
+                            <option value="all">Все</option>
+                            <option value="ethiopia">Эфиопия</option>
+                            <option value="colombia">Колумбия</option>
+                            <option value="brazil">Бразилия</option>
+                            <option value="kenya">Кения</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="coffee-roast" class="filter-label">Обжарка</label>
+                        <select id="coffee-roast" class="filter-select">
+                            <option value="all">Все</option>
+                            <option value="light">Светлая</option>
+                            <option value="medium">Средняя</option>
+                            <option value="dark">Темная</option>
+                        </select>
+                    </div>
+                    <button class="btn btn--outline filter-reset btn-hover-effect">Сбросить</button>
+                </div>
+
+                <div class="catalog-grid">
+                    <!-- Эспрессо -->
+                    <div class="coffee-card animate-on-scroll card-hover" id="espresso" data-type="espresso" data-origin="brazil" data-roast="dark">
+                        <div class="coffee-card__image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-uOO3NT5EsLFxarJ8vb4jS1-hS7SkhxJeg&s" alt="Эспрессо" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Эспрессо</h3>
+                            <p class="coffee-card__price">150 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Капучино -->
+                    <div class="coffee-card animate-on-scroll delay-1 card-hover" id="cappuccino" data-type="espresso" data-origin="ethiopia" data-roast="medium">
+                        <div class="coffee-card__image">
+                            <img src="https://cdn.prod.website-files.com/5f92b98ef775e43402afe27f/632845fd4a30f55ce6011c1d_Polyakovfoto_Simple%20Coffee17803.jpg" alt="Капучино" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Капучино</h3>
+                            <p class="coffee-card__price">220 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Латте -->
+                    <div class="coffee-card animate-on-scroll delay-2 card-hover" id="latte" data-type="espresso" data-origin="colombia" data-roast="medium">
+                        <div class="coffee-card__image">
+                            <img src="https://101kofemashina.ru/wp-content/uploads/2021/06/billy-kwok-vfiA7rRtjWo-unsplash-e1637677562131.jpg" alt="Латте" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Латте</h3>
+                            <p class="coffee-card__price">240 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Американо -->
+                    <div class="coffee-card animate-on-scroll card-hover" id="americano" data-type="espresso" data-origin="brazil" data-roast="medium">
+                        <div class="coffee-card__image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOs5jMlB8lLHizwwA-DEsvcINyJynNzkIaA&s" alt="Американо" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Американо</h3>
+                            <p class="coffee-card__price">180 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Раф -->
+                    <div class="coffee-card animate-on-scroll delay-1 card-hover" id="raf" data-type="espresso" data-origin="kenya" data-roast="medium">
+                        <div class="coffee-card__image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeYMcuckqT8-2wUlj2ggkIuaBCyw-G9L_93A&s" alt="Раф кофе" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Раф</h3>
+                            <p class="coffee-card__price">260 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Флэт Уайт -->
+                    <div class="coffee-card animate-on-scroll delay-2 card-hover" id="flat-white" data-type="espresso" data-origin="colombia" data-roast="light">
+                        <div class="coffee-card__image">
+                            <img src="https://jz9czo0xs6.ru.scalesta-cdn.com/8UYkjvBnoAKpQopuBw2FvT3nsD0=/filters:format(webp)/https%3A%2F%2Fcomplexbar.ru%2Fimages%2Fblog%2F243%2Fflat_white_mint_brauni.png" alt="Флэт Уайт" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Флэт Уайт</h3>
+                            <p class="coffee-card__price">250 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Гляссе -->
+                    <div class="coffee-card animate-on-scroll card-hover" id="glace" data-type="special" data-origin="brazil" data-roast="medium">
+                        <div class="coffee-card__image">
+                            <img src="https://mircoffee.ru/ckfinder/userfiles/images/123306489_a15.jpg" alt="Гляссе" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Гляссе</h3>
+                            <p class="coffee-card__price">280 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Макиато -->
+                    <div class="coffee-card animate-on-scroll delay-1 card-hover" id="macchiato" data-type="espresso" data-origin="ethiopia" data-roast="dark">
+                        <div class="coffee-card__image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFVCjVCMo9yKATaxW8mj7SjNeIgYrQWOlFg&s" alt="Макиато" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Макиато</h3>
+                            <p class="coffee-card__price">200 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Фильтр-кофе -->
+                    <div class="coffee-card animate-on-scroll delay-2 card-hover" id="filter" data-type="filter" data-origin="colombia" data-roast="light">
+                        <div class="coffee-card__image">
+                            <img src="https://www.posudaok.ru/images/product/mid/206918_4.jpg" alt="Фильтр-кофе" loading="lazy">
+                        </div>
+                        <div class="coffee-card__content">
+                            <h3 class="coffee-card__title">Фильтр-кофе</h3>
+                            <p class="coffee-card__price">230 ₽</p>
+                            <button class="btn btn--primary coffee-card__btn btn-hover-effect">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col footer__about">
+                    <div class="logo footer__logo">
+                        <span class="logo__text">ZM Coffee</span>
+                    </div>
+                    <p class="footer__quote">"Кофе - это напиток, который делает ум резвым, но не утомляет тело." — Иоганн Себастьян Бах</p>
+                </div>
+                
+                <div class="footer__col footer__nav">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link">Меню</a></li>
+                        <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                        <li class="nav__item"><a href="reviews.html" class="nav__link">Отзывы</a></li>
+                        <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col footer__legal">
+                    <h3 class="footer__title">Документы</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer__link">Публичная оферта</a></li>
+                        <li><a href="#" class="footer__link">Правила посещения</a></li>
+                        <li><a href="#" class="footer__link">Франшиза</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col footer__social">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">ВКонтакте</a></li>
+                        <li><a href="#" class="footer__link">Instagram</a></li>
+                        <li><a href="#" class="footer__link">Telegram</a></li>
+                        <li><a href="#" class="footer__link">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 ZM Coffee. Все права защищены.</p>
+                <p class="footer__made">Сделано с любовью к кофе</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZM Coffee - Премиальные кофейни</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="circe-webfont/style.css">
+</head>
+<body>
+        <div class="loader" style="background-color: rgb(15, 57, 33);">
+            <div class="loader-logo"><img  src="img/logo/logo.png" class="hero__logo"></div>
+        </div>
+
+    <div class="modal" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close modal">×</button>
+            <h2 class="modal__title" id="auth-modal-title">Вход</h2>
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <input type="text" id="login-email"  placeholder=" ">
+                    <label for="login-email">Email или телефон</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder=" ">
+                    <label for="login-password">Пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="login-password">👁️</span>
+                </div>
+                <button type="submit" class="btn btn--primary btn-hover-effect">Войти</button>
+                <p class="auth-form__footer">Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="reg-modal" role="dialog" aria-labelledby="reg-modal-title" aria-hidden="true">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close modal">×</button>
+            <h2 class="modal__title" id="reg-modal-title">Регистрация</h2>
+            <form class="auth-form" id="register-form">
+                <div class="form-group">
+                    <input type="text" id="reg-name" placeholder=" ">
+                    <label for="reg-name">Имя</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="reg-phone" placeholder=" ">
+                    <label for="reg-phone">Телефон</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="reg-email" placeholder=" ">
+                    <label for="reg-email">Email</label>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-password"  placeholder=" ">
+                    <label for="reg-password">Пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="reg-password">👁️</span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-confirm" placeholder=" ">
+                    <label for="reg-confirm">Подтвердите пароль</label>
+                    <span class="form-error"></span>
+                    <span class="password-toggle" data-target="reg-confirm">👁️</span>
+                </div>
+                <button type="submit" class="btn btn--primary btn-hover-effect">Зарегистрироваться</button>
+                <p class="auth-form__footer">Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a></p>
+            </form>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img src="img/logo/logo2.svg" alt="ZM Coffee logo" >
+            </a>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                    <li class="nav__item"><a href="reviews.html" class="nav__link">Отзывы</a></li>
+                    <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
+                </ul>
+            </nav>
+            <div class="header__auth">
+                <button class="btn btn--outline auth-btn btn-hover-effect" id="login-btn">Войти</button>
+                <button class="btn btn--primary auth-btn btn-hover-effect" id="register-btn">Регистрация</button>
+            </div>
+            <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <img  src="img/logo/logo.png" class="hero__logo">
+                <h2 style="font-size: 110px; color: aliceblue;">ZM COFFEE</h2>
+                <a href="#menu" class="btn btn--primary hero__btn btn-hover-effect animate-on-scroll">Выбрать кофе</a>
+            </div>
+        </div>
+        <div class="hero__image">
+            <div class="coffee-steam">
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="steam"></div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <section class="ms1-section ms1-index">
+            <div class="ms1-content index-ms-content">
+                <h2>Делаем <span id="main_typed_1">вкусный</span><br> кофе с 2008 года</h2>
+                <p>Компания, в лице первой кофейни «З&М», была основана в 2008 году с целью сделать кофе популярным напитком во всей Республике. Сегодня это большая сеть кофеен в городе Махачкала и за его пределами.</p>
+                <a class="btn outline arrow index-ms-content-btn" href="/about/">Подробнее →</a>
+                <div class="img_extra-ms1">
+                    <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/img1.png" alt="Coffee beans" loading="lazy">
+                    <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/img2.png" alt="Coffee cup" loading="lazy">
+                </div>
+            </div>
+            <div class="ms1-cover">
+                <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/ms1-cover.webp" alt="Coffee shop" loading="lazy">
+            </div>
+        </section>
+
+        <section class="ms2-section">
+            <div class="ms2-head hidden-xs hidden-sm">
+                <h2>Новинки</h2>
+            </div>
+            <div class="ms2-image ms2-image0">
+                <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/ms2-logo.svg" alt="ZM Coffee logo" loading="lazy">
+            </div>
+            <div class="ms2-content">
+                <h2 class="hidden-md hidden-lg">Новинки</h2>
+                <p>Мы работаем со вкусом через разные форм-факторы и постоянно находимся в поиске уникальных сочетаний, исследуя и занимая новые сегменты рынка.</p>
+                <a class="btn outline arrow" href="/products/coffe-merch/">Подробнее →</a>
+            </div>
+            <div class="ms2-image ms2-image1">
+                <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/ms2-image1.webp" alt="New product 1" loading="lazy">
+            </div>
+            <div class="ms2-image ms2-image2">
+                <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/ms2-image2.webp" alt="New product 2" loading="lazy">
+            </div>
+        </section>
+    </div>
+    <div class="marquee-wrapper">
+        <div class="marquee-container">
+            <p class="marquee">
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+            </p>
+        </div>
+    </div>
+
+    <section class="about section" id="about">
+        <div class="container about__container">
+            <div class="about__image animate-on-scroll">
+                <div class="image-wrapper float-element">
+                    <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/msi-image-4.webp" alt="About ZM Coffee" loading="lazy">
+                </div>
+            </div>
+            <div class="about__content">
+                <h2 class="section-title about__title text-animate">Наша философия</h2>
+                <p class="about__text animate-on-scroll">ZM Coffee — это не просто сеть кофеен, это пространство, где каждый может почувствовать себя частью особого сообщества ценителей кофе.</p>
+                <p class="about__text animate-on-scroll delay-1">Мы работаем напрямую с фермерами из Эфиопии, Колумбии, Бразилии и других стран, чтобы привезти вам лучшие зерна с соблюдением принципов fair trade.</p>
+                <div class="about__stats">
+                    <div class="stat-item animate-on-scroll delay-2">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">кофеен</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-3">
+                        <span class="stat-number" data-count="120">0</span>
+                        <span class="stat-label">сортов кофе</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-4">
+                        <span class="stat-number" data-count="5000">0</span>
+                        <span class="stat-label">довольных клиентов</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-preview section" id="menu">
+        <div class="container">
+            <h2 class="section-title menu-preview__title text-animate">Популярные позиции</h2>
+            <p class="section-subtitle animate-on-scroll">Попробуйте наши хиты</p>
+            <div class="menu-grid">
+                <div class="menu-item animate-on-scroll card-hover">
+                    <div class="menu-item__image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDlfKX-f9EMr-7ntLqaZeHsB47GuT5VcKM-w&s" alt="Эспрессо" loading="lazy">
+                    </div>
+                    <div class="menu-item__content">
+                        <h3 class="menu-item__title">Эспрессо</h3>
+                        <p class="menu-item__price">150 ₽</p>
+                        <a href="catalog.html#espresso" class="btn btn--outline menu-item__btn btn-hover-effect">Подробнее</a>
+                    </div>
+                </div>
+                <div class="menu-item animate-on-scroll card-hover">
+                    <div class="menu-item__image">
+                        <img src="https://statics.mixitup.ru/img/uploads/product2/xl/121/1564.jpg" alt="Капучино" loading="lazy">
+                    </div>
+                    <div class="menu-item__content">
+                        <h3 class="menu-item__title">Капучино</h3>
+                        <p class="menu-item__price">220 ₽</p>
+                        <a href="catalog.html#cappuccino" class="btn btn--outline menu-item__btn btn-hover-effect">Подробнее</a>
+                    </div>
+                </div>
+                <div class="menu-item animate-on-scroll delay-2 card-hover">
+                    <div class="menu-item__image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL_wmE0rMMBQi94i6ej7T8Pqj6gwLKOKNj3g&s" alt="Латте" loading="lazy">
+                    </div>
+                    <div class="menu-item__content">
+                        <h3 class="menu-item__title">Латте</h3>
+                        <p class="menu-item__price">240 ₽</p>
+                        <a href="catalog.html#latte" class="btn btn--outline menu-item__btn btn-hover-effect">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center animate-on-scroll">
+                <a href="catalog.html" class="btn btn--primary btn-hover-effect">Смотреть весь каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-wrapper">
+        <div class="marquee-container">
+            <p class="marquee">
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+            </p>
+        </div>
+    </div>
+
+    <section class="roasting section">
+        <div class="container">
+            <h2 class="section-title roasting__title text-animate">Наш процесс обжарки</h2>
+            <p class="section-subtitle animate-on-scroll">Искусство раскрытия вкуса</p>
+            <div class="roasting-steps">
+                <div class="roasting-step animate-on-scroll card-hover">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Отбор зерен</h3>
+                    <p class="step-text">Мы выбираем только спешелти зерна с оценкой выше 85 баллов по стандарту SCA.</p>
+                </div>
+                <div class="roasting-step animate-on-scroll delay-1 card-hover">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Контроль качества</h3>
+                    <p class="step-text">Каждая партия проходит строгий контроль на влажность, плотность и дефекты.</p>
+                </div>
+                <div class="roasting-step animate-on-scroll delay-2 card-hover">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Обжарка</h3>
+                    <p class="step-text">Используем медленную обжарку [обжарку при низких температурах для максимального раскрытия вкуса.</p>
+                </div>
+                <div class="roasting-step animate-on-scroll delay-3 card-hover">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Дегазация</h3>
+                    <p class="step-text">После обжарки кофе "отдыхает" 3-7 дней для стабилизации вкусоароматических свойств.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-wrapper">
+        <div class="marquee-container">
+            <p class="marquee">
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+                
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+                
+                ZM COFFEE ZM COFFEE 
+
+                <img class="marquee-posimg" src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/slogo_speed_frame.svg" alt="">
+            </p>
+        </div>
+    </div>
+    <section class="blog section">
+        <div class="container">
+            <h2 class="section-title blog__title text-animate">Кофейный блог</h2>
+            <p class="section-subtitle animate-on-scroll">Полезные статьи и новости</p>
+            <div class="blog-grid">
+                <article class="blog-post animate-on-scroll card-hover">
+                    <div class="post-image">
+                        <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/image%20207.png" alt="Как выбрать кофе" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">Как выбрать кофе для дома</h3>
+                        <p class="post-excerpt">Разбираемся в сортах, степенях обжарки и методах заваривания для домашнего использования.</p>
+                        <a href="#" class="post-link">Читать далее</a>
+                    </div>
+                </article>
+                <article class="blog-post animate-on-scroll delay-1 card-hover">
+                    <div class="post-image">
+                        <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/image%20208.png" alt="История кофе" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">История кофе: от Эфиопии до наших дней</h3>
+                        <p class="post-excerpt">Как скромные зерна из Африки покорили весь мир и изменили культуру потребления напитков.</p>
+                        <a href="#" class="post-link">Читать далее</a>
+                    </div>
+                </article>
+                <article class="blog-post animate-on-scroll delay-2 card-hover">
+                    <div class="post-image">
+                        <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/images/image%20209.png" alt="Тренды 2023" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">Кофейные тренды 2023</h3>
+                        <p class="post-excerpt">Какие напитки и методы приготовления будут популярны в этом году по мнению наших экспертов.</p>
+                        <a href="#" class="post-link">Читать далее</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts section" id="contacts">
+        <div class="container">
+            <h2 class="section-title contacts__title text-animate">Контакты</h2>
+            <p class="section-subtitle animate-on-scroll">Свяжитесь с нами</p>
+            <div class="contacts-grid">
+                <div class="contacts-info animate-on-scroll">
+                    <h3 class="contacts-subtitle">Контактная информация</h3>
+                    <ul class="contacts-list">
+                        <li class="contacts-item">
+                            <span class="contacts-icon">📞</span>
+                            <a href="tel:+78005553535">8 (800) 555-35-35</a>
+                        </li>
+                        <li class="contacts-item">
+                            <span class="contacts-icon">✉️</span>
+                            <a href="mailto:info@zm-coffee.ru">info@zm-coffee.ru</a>
+                        </li>
+                        <li class="contacts-item">
+                            <span class="contacts-icon">🏢</span>
+                            <span>г. Москва, ул. Кофейная, 15</span>
+                        </li>
+                    </ul>
+                    <h3 class="contacts-subtitle">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link btn-hover-effect">VK</a>
+                        <a href="#" class="social-link btn-hover-effect">Instagram</a>
+                        <a href="#" class="social-link btn-hover-effect">Telegram</a>
+                    </div>
+                </div>
+                <div class="contacts-form animate-on-scroll delay-1">
+                    <h3 class="contacts-subtitle">Остались вопросы?</h3>
+                    <form class="feedback-form">
+                        <div class="form-group">
+                            <input type="text" id="feedback-name" required placeholder=" ">
+                            <label for="feedback-name">Ваше имя</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="feedback-email" required placeholder=" ">
+                            <label for="feedback-email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="feedback-message" required placeholder=" "></textarea>
+                            <label for="feedback-message">Ваше сообщение</label>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn-hover-effect">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col footer__about">
+                    <div class="logo footer__logo">
+                        <span class="logo__text">ZM Coffee</span>
+                    </div>
+                    <p class="footer__quote">"Кофе - это напиток, который делает ум резвым, но не утомляет тело." — Иоганн Себастьян Бах</p>
+                </div>
+                <div class="footer__col footer__nav">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">О нас</a></li>
+                        <li><a href="#menu" class="footer__link">Меню</a></li>
+                        <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                        <li><a href="#locations" class="footer__link">Кофейни</a></li>
+                        <li><a href="#reviews" class="footer__link">Отзывы</a></li>
+                        <li><a href="#contacts" class="footer__link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col footer__legal">
+                    <h3 class="footer__title">Документы</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer__link">Публичная оферта</a></li>
+                        <li><a href="#" class="footer__link">Правила посещения</a></li>
+                        <li><a href="#" class="footer__link">Франшиза</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col footer__social">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">ВКонтакте</a></li>
+                        <li><a href="#" class="footer__link">Instagram</a></li>
+                        <li><a href="#" class="footer__link">Telegram</a></li>
+                        <li><a href="#" class="footer__link">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

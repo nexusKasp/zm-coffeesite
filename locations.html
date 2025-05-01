@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши кофейни - ZM Coffee</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="circe-webfont/style.css">
+</head>
+<body>
+   
+    <div class="loader" style="background-color: rgb(15, 57, 33);">
+        <div class="loader-logo"><img  src="img/logo/logo.png" class="hero__logo"></div>
+    </div>
+
+<div class="modal" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="auth-modal-title">Вход</h2>
+        <form class="auth-form" id="login-form">
+            <div class="form-group">
+                <input type="text" id="login-email"  placeholder=" ">
+                <label for="login-email">Email или телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder=" ">
+                <label for="login-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="login-password">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Войти</button>
+            <p class="auth-form__footer">Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="reg-modal" role="dialog" aria-labelledby="reg-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="reg-modal-title">Регистрация</h2>
+        <form class="auth-form" id="register-form">
+            <div class="form-group">
+                <input type="text" id="reg-name" placeholder=" ">
+                <label for="reg-name">Имя</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="reg-phone" placeholder=" ">
+                <label for="reg-phone">Телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="reg-email" placeholder=" ">
+                <label for="reg-email">Email</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-password"  placeholder=" ">
+                <label for="reg-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-password">👁️</span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-confirm" placeholder=" ">
+                <label for="reg-confirm">Подтвердите пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-confirm">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Зарегистрироваться</button>
+            <p class="auth-form__footer">Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a></p>
+        </form>
+    </div>
+</div>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img src="img/logo/logo2.svg" alt="ZM Coffee logo" >
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                    <li class="nav__item"><a href="reviews.html" class="nav__link">Отзывы</a></li>
+                    <li class="nav__item"><a href="news.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__auth">
+                <button class="btn btn--outline auth-btn btn-hover-effect" id="login-btn">Войти</button>
+                <button class="btn btn--primary auth-btn btn-hover-effect" id="register-btn">Регистрация</button>
+                <button class="btn btn--outline auth-btn btn-hover-effect" id="logout-btn" style="display: none;">Выйти</button>
+            </div>
+            <button class="burger" id="burger">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Locations Section -->
+    <section class="locations-page section">
+        <div class="container">
+            <h2 class="section-title locations__title text-animate">Адреса наших кофеен</h2>
+            <p class="section-subtitle animate-on-scroll">Выберите город, чтобы увидеть ближайшие кофейни</p>
+
+            <!-- City Switcher -->
+            <div class="city-switcher animate-on-scroll">
+                <button class="btn btn--outline menu-item__btn btn-hover-effect active" data-city="makhachkala">Махачкала</button>
+                <button class="btn btn--outline menu-item__btn btn-hover-effect" data-city="kaspiysk">Каспийск</button>
+                <button class="btn btn--outline menu-item__btn btn-hover-effect" data-city="tarki">Тарки</button>
+                <button class="btn btn--outline menu-item__btn btn-hover-effect" data-city="novyy-khushet">Новый Хушет</button>
+                <button class="btn btn--outline menu-item__btn btn-hover-effect" data-city="tally">Таллы</button>
+            </div>
+
+            <!-- Locations Content with Map -->
+            <div class="locations-content-wrapper">
+                <!-- Locations List -->
+                <div class="locations-content">
+                    <!-- Makhachkala -->
+                    <div class="city-locations active" data-city="makhachkala">
+                        <div class="location-item animate-on-scroll">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/%D0%98%D1%80%D1%87%D0%B8-%D0%9A%D0%B0%D0%B7%D0%B0%D0%BA%D0%B0.jpg" alt="ZM Ирчи Казак" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Ирчи Казака</h3>
+                                <p>г. Махачкала, ул.Ирчи-Казак, д. 27А</p>
+                                <p>8:00 – 23:00</p>
+                                <p>+7 (8722) 560 060</p>
+                            </div>
+                        </div>
+                        <div class="location-item animate-on-scroll delay-1">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/%D0%A1%D1%82%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE.jpg" alt="ZM Стамбульский" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Суллеймана-Стальского</h3>
+                                <p>г. Махачкала, ул.Суллеймана-Стальского, д. 71Е</p>
+                                <p>Круглосуточно</p>
+                                <p>+7 (8722) 67 01 41</p>
+                            </div>
+                        </div>
+                        <div class="location-item animate-on-scroll delay-2">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/%D0%91%D1%83%D0%B9%D0%BD%D0%B0%D0%BA%D1%81%D0%BA%D0%BE%D0%B3%D0%BE.jpg" alt="ZM Буйнакского" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Буйнакского</h3>
+                                <p>г. Махачкала, ул.Буйнакского, д. 6</p>
+                                <p>Круглосуточно</p>
+                                <p>+7 (8722) 67-22-77</p>
+                            </div>
+                        </div>
+                        <div class="location-item animate-on-scroll delay-3">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/roster.jpg" alt="ZM Ростов" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Ростер</h3>
+                                <p>г. Махачкала, ул. Гамидова, д. 36</p>
+                                <p>8:00 – 23:00</p>
+                                <p>+7 (989) 497-77-11</p>
+                            </div>
+                        </div>
+                        <div class="location-item animate-on-scroll delay-4">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/%D0%9A%D0%BE%D1%80%D0%BA%D0%BC%D0%B0%D1%81%D0%BE%D0%B2%D0%B0.jpg" alt="ZM Коркмасова" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Коркмасова</h3>
+                                <p>г. Махачкала, ул. Коркмасова, д. 9</p>
+                                <p>8:00 – 23:00</p>
+                                <p>+7 (8722) 68-28-68</p>
+                            </div>
+                        </div>
+                        <div class="location-item animate-on-scroll delay-5">
+                            <img src="https://zm-coffee.ru/wp-content/themes/zm-coffe/assets/mapimages/%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82_%D0%9C%D0%B0%D1%85%D0%B0%D1%87%D0%BA%D0%B0%D0%BB%D0%B0.jpeg" alt="ZM Аэропорт" class="location-image">
+                            <div class="location-info">
+                                <h3>ZM Аэропорт</h3>
+                                <p>международный аэропорт А-1 3 этаж</p>
+                                <p>Круглосуточно</p>
+                                <p>+7 (938) 202-21-18</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kaspiysk -->
+                    <div class="city-locations" data-city="kaspiysk">
+                        <div class="location-item animate-on-scroll">
+                            <div class="location-info">
+                                <h3>ZM Каспийск</h3>
+                                <p>г. Каспийск, ул.Ленина, д. 9</p>
+                                <p>8:00 – 23:00</p>
+                                <p>+7 (8722) 56-78-90</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarki -->
+                    <div class="city-locations" data-city="tarki">
+                        <div class="location-item animate-on-scroll">
+                            <div class="location-info">
+                                <h3>ZM Тарки</h3>
+                                <p>пос. Тарки, ул.Центральная, д. 5</p>
+                                <p>8:00 – 22:00</p>
+                                <p>+7 (8722) 67-89-01</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Novyy Khushet -->
+                    <div class="city-locations" data-city="novyy-khushet">
+                        <div class="location-item animate-on-scroll">
+                            <div class="location-info">
+                                <h3>ZM Новый Хушет</h3>
+                                <p>пос. Новый Хушет, ул.Центральная, д. 10</p>
+                                <p>8:00 – 22:00</p>
+                                <p>+7 (8722) 67-90-12</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tally -->
+                    <div class="city-locations" data-city="tally">
+                        <div class="location-item animate-on-scroll">
+                            <div class="location-info">
+                                <h3>ZM Таллы</h3>
+                                <p>пос. Таллы, ул.Главная, д. 3</p>
+                                <p>8:00 – 22:00</p>
+                                <p>+7 (8722) 67-90-13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Container -->
+                <div class="location-map-container">
+                    <h3 id="map-title">Выберите кофейню</h3>
+                    <div id="map-frame" class="map-placeholder">
+                        <p>Нажмите на кофейню, чтобы увидеть её расположение на карте.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col footer__about">
+                    <div class="logo footer__logo">
+                        <span class="logo__text">ZM Coffee</span>
+                    </div>
+                    <p class="footer__quote">"Кофе - это напиток, который делает ум резвым, но не утомляет тело." — Иоганн Себастьян Бах</p>
+                </div>
+                <div class="footer__col footer__nav">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li><a href="index.html#about" class="footer__link">О нас</a></li>
+                        <li><a href="index.html#menu" class="footer__link">Меню</a></li>
+                        <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                        <li><a href="locations.html" class="footer__link">Кофейни</a></li>
+                        <li><a href="index.html#reviews" class="footer__link">Отзывы</a></li>
+                        <li><a href="index.html#contacts" class="footer__link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col footer__legal">
+                    <h3 class="footer__title">Документы</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer__link">Публичная оферта</a></li>
+                        <li><a href="#" class="footer__link">Правила посещения</a></li>
+                        <li><a href="#" class="footer__link">Франшиза</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col footer__social">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">ВКонтакте</a></li>
+                        <li><a href="#" class="footer__link">Instagram</a></li>
+                        <li><a href="#" class="footer__link">Telegram</a></li>
+                        <li><a href="#" class="footer__link">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/locations.js"></script>
+</body>
+</html>

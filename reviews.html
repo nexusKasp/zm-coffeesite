@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="circe-webfont/style.css">
+</head>
+<body>
+    <div class="loader" style="background-color: rgb(15, 57, 33);">
+        <div class="loader-logo"><img  src="img/logo/logo.png" class="hero__logo"></div>
+    </div>
+
+<div class="modal" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="auth-modal-title">Вход</h2>
+        <form class="auth-form" id="login-form">
+            <div class="form-group">
+                <input type="text" id="login-email"  placeholder=" ">
+                <label for="login-email">Email или телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder=" ">
+                <label for="login-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="login-password">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Войти</button>
+            <p class="auth-form__footer">Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="reg-modal" role="dialog" aria-labelledby="reg-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="reg-modal-title">Регистрация</h2>
+        <form class="auth-form" id="register-form">
+            <div class="form-group">
+                <input type="text" id="reg-name" placeholder=" ">
+                <label for="reg-name">Имя</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="reg-phone" placeholder=" ">
+                <label for="reg-phone">Телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="reg-email" placeholder=" ">
+                <label for="reg-email">Email</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-password"  placeholder=" ">
+                <label for="reg-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-password">👁️</span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-confirm" placeholder=" ">
+                <label for="reg-confirm">Подтвердите пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-confirm">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Зарегистрироваться</button>
+            <p class="auth-form__footer">Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a></p>
+        </form>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container header__container">
+        <a href="index.html" class="logo">
+            <img src="img/logo/logo2.svg" alt="ZM Coffee logo" >
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="catalog.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                <li class="nav__item"><a href="reviews.html" class="nav__link">Отзывы</a></li>
+                <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
+            </ul>
+        </nav>
+        <div class="header__auth">
+            <button class="btn btn--outline auth-btn btn-hover-effect" id="login-btn">Войти</button>
+            <button class="btn btn--primary auth-btn btn-hover-effect" id="register-btn">Регистрация</button>
+        </div>
+        <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+<section class="custom-reviews-section">
+    <div class="custom-container">
+      <h2 class="custom-section-title">Отзывы</h2>
+      <div class="custom-reviews-list" id="reviews-list">
+        <!-- Существующие отзывы -->
+        <div class="custom-review-item">
+          <div class="custom-review-header">
+            <div class="custom-review-info">
+              <h3 class="custom-review-name">Марина</h3>
+              <span class="custom-review-date">20.03.2023</span>
+            </div>
+          </div>
+          <div class="custom-review-rating">
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star">☆</span>
+          </div>
+          <p class="custom-review-text">
+            Замечательное место, интересный интерьер. Мне в целом понравилось, только могли бы добавить побольше десертов. Спасибо!
+          </p>
+        </div>
+        <div class="custom-review-item">
+          <div class="custom-review-header">
+            <div class="custom-review-info">
+              <h3 class="custom-review-name">Екатерина</h3>
+              <span class="custom-review-date">15.02.2023</span>
+            </div>
+          </div>
+          <div class="custom-review-rating">
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+            <span class="custom-star active">★</span>
+          </div>
+          <p class="custom-review-text">
+            Очень атмосферное место, отличная музыка, вкусный кофе. Обязательно вернусь сюда снова! Рекомендую всем!
+          </p>
+        </div>
+      </div>
+
+      <!-- Форма для добавления отзыва -->
+      <div class="custom-review-form-container" id="review-form-container">
+        <form id="review-form" class="custom-review-form">
+          <div class="custom-form-group">
+            <label for="review-name">Ваше имя *</label>
+            <input type="text" id="review-name" name="name" required>
+            <span class="custom-form-error"></span>
+          </div>
+          <div class="custom-form-group">
+            <label>Ваш рейтинг *</label>
+            <div class="custom-rating">
+              <span class="custom-star" data-value="1">★</span>
+              <span class="custom-star" data-value="2">★</span>
+              <span class="custom-star" data-value="3">★</span>
+              <span class="custom-star" data-value="4">★</span>
+              <span class="custom-star" data-value="5">★</span>
+              <input type="hidden" id="review-rating" name="rating" value="0">
+            </div>
+            <span class="custom-form-error"></span>
+          </div>
+          <div class="custom-form-group">
+            <label for="review-text">Ваш отзыв *</label>
+            <textarea id="review-text" name="text" rows="4" required></textarea>
+            <span class="custom-form-error"></span>
+          </div>
+          <button type="submit" class="custom-submit-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__col footer__about">
+                <div class="logo footer__logo">
+                    <span class="logo__text">ZM Coffee</span>
+                </div>
+                <p class="footer__quote">"Кофе - это напиток, который делает ум резвым, но не утомляет тело." — Иоганн Себастьян Бах</p>
+            </div>
+            <div class="footer__col footer__nav">
+                <h3 class="footer__title">Навигация</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html#about" class="footer__link">О нас</a></li>
+                    <li><a href="index.html#menu" class="footer__link">Меню</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                    <li><a href="locations.html" class="footer__link">Кофейни</a></li>
+                    <li><a href="index.html#reviews" class="footer__link">Отзывы</a></li>
+                    <li><a href="index.html#contacts" class="footer__link">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__legal">
+                <h3 class="footer__title">Документы</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                    <li><a href="#" class="footer__link">Публичная оферта</a></li>
+                    <li><a href="#" class="footer__link">Правила посещения</a></li>
+                    <li><a href="#" class="footer__link">Франшиза</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__social">
+                <h3 class="footer__title">Соцсети</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">ВКонтакте</a></li>
+                    <li><a href="#" class="footer__link">Instagram</a></li>
+                    <li><a href="#" class="footer__link">Telegram</a></li>
+                    <li><a href="#" class="footer__link">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>

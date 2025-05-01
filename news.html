@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="circe-webfont/style.css">
+    <title>ZM Coffee - News</title>
+</head>
+<body>
+    <div class="loader" style="background-color: rgb(15, 57, 33);">
+        <div class="loader-logo"><img  src="img/logo/logo.png" class="hero__logo"></div>
+    </div>
+
+<div class="modal" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="auth-modal-title">Вход</h2>
+        <form class="auth-form" id="login-form">
+            <div class="form-group">
+                <input type="text" id="login-email"  placeholder=" ">
+                <label for="login-email">Email или телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder=" ">
+                <label for="login-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="login-password">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Войти</button>
+            <p class="auth-form__footer">Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="reg-modal" role="dialog" aria-labelledby="reg-modal-title" aria-hidden="true">
+    <div class="modal__content">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h2 class="modal__title" id="reg-modal-title">Регистрация</h2>
+        <form class="auth-form" id="register-form">
+            <div class="form-group">
+                <input type="text" id="reg-name" placeholder=" ">
+                <label for="reg-name">Имя</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="reg-phone" placeholder=" ">
+                <label for="reg-phone">Телефон</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="reg-email" placeholder=" ">
+                <label for="reg-email">Email</label>
+                <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-password"  placeholder=" ">
+                <label for="reg-password">Пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-password">👁️</span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-confirm" placeholder=" ">
+                <label for="reg-confirm">Подтвердите пароль</label>
+                <span class="form-error"></span>
+                <span class="password-toggle" data-target="reg-confirm">👁️</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn-hover-effect">Зарегистрироваться</button>
+            <p class="auth-form__footer">Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a></p>
+        </form>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container header__container">
+        <a href="index.html" class="logo">
+            <img src="img/logo/logo2.svg" alt="ZM Coffee logo" >
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="catalog.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="locations.html" class="nav__link">Кофейни</a></li>
+                <li class="nav__item"><a href="reviews.html" class="nav__link">Отзывы</a></li>
+                <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
+            </ul>
+        </nav>
+        <div class="header__auth">
+            <button class="btn btn--outline auth-btn btn-hover-effect" id="login-btn">Войти</button>
+            <button class="btn btn--primary auth-btn btn-hover-effect" id="register-btn">Регистрация</button>
+        </div>
+        <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+<main>
+    <div class="container">
+      <div class="basket">
+        <div class="news-head">
+          <h2>Новости</h2>
+        </div>
+        <div class="news-body">
+          <div class="news-banner">
+                            <div class="news-banner-big">
+                    <div class="news-item">
+                      <a href="https://zm-coffee.ru/%d0%b2%d1%81%d1%82%d1%80%d0%b5%d1%87%d0%b0%d0%b9%d1%82%d0%b5-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%ba%d1%83-2/" class="news-link">
+                        <div class="news-image">
+                          <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/new-big-image.jpg" alt="">
+                        </div>
+                        <div class="news-title">
+                          <p>ВСТРЕЧАЙТЕ НОВИНКУ 2</p>
+                        </div>
+                      </a>
+                      <div class="news-date">
+                        <span>31.05.2023</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+            <div class="news-banner-right">
+                                  <div class="news-item">
+                        <a href="https://zm-coffee.ru/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8-%d0%b2-zm-coffee/" class="news-link">
+                          <div class="news-image">
+                            <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/breakfast_zm.png" alt="">
+                          </div>
+                          <div class="news-title">
+                            <p>ЗАВТРАКИ В ZM COFFEE</p>
+                          </div>
+                        </a>
+                        <div class="news-date">
+                          <span>31.05.2023</span>
+                        </div>
+                      </div>
+                                        <div class="news-item">
+                        <a href="https://zm-coffee.ru/%d0%bc%d0%b0%d1%81%d1%82%d0%b5%d1%80-%d0%ba%d0%bb%d0%b0%d1%81%d1%81/" class="news-link">
+                          <div class="news-image">
+                            <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news2_1-1.jpg" alt="">
+                          </div>
+                          <div class="news-title">
+                            <p>МАСТЕР-КЛАСС</p>
+                          </div>
+                        </a>
+                        <div class="news-date">
+                          <span>31.05.2023</span>
+                        </div>
+                      </div>
+                    
+            </div>
+          </div>
+          <div class="news-feed">
+                        <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%be%d1%82%d0%ba%d1%80%d1%8b%d1%82%d0%b8%d0%b5-%d0%b7%d0%bc-%d0%bf%d0%b0%d0%bb%d1%8c%d0%bc%d0%b8%d1%80%d0%b0/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2024/12/zm2.jpeg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>Открытие ЗМ  &#8220;Пальмира&#8221;</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>26.12.2024</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d1%81%d0%b5%d1%80%d0%b3%d0%b5%d0%b9-%d1%81%d1%82%d0%b5%d0%bf%d0%b0%d0%bd%d1%87%d1%83%d0%ba-%d0%b2-%d0%b4%d0%b5%d1%80%d0%b1%d0%b5%d0%bd%d1%82%d0%b5/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-4.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>СЕРГЕЙ СТЕПАНЧУК В ДЕРБЕНТЕ</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%b4%d0%b5%d0%bd%d1%8c-%d0%bf%d0%be%d0%b1%d0%b5%d0%b4%d1%8b-%d0%b2-%d1%81%d0%b5%d1%82%d0%b8-%d0%ba%d0%be%d1%84%d0%b5%d0%b5%d0%bd/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-3.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>ДЕНЬ ПОБЕДЫ В СЕТИ КОФЕЕН</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%bb%d0%b5%d1%82%d0%bd%d0%b8%d0%b5-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%ba%d0%b8/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-2.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>ЛЕТНИЕ НОВИНКИ</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%b0%d1%80%d1%82-%d0%b2%d0%b5%d1%87%d0%b5%d1%80/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-1.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>АРТ-ВЕЧЕР</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%b2%d1%81%d1%82%d1%80%d0%b5%d1%87%d0%b0%d0%b9%d1%82%d0%b5-%d0%bd%d0%be%d0%b2%d0%b8%d0%bd%d0%ba%d1%83/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-7.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>ВСТРЕЧАЙТЕ НОВИНКУ</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                              <div class="news-item">
+                  <a href="https://zm-coffee.ru/%d0%bf%d0%be%d1%87%d0%b5%d0%bc%d1%83-%d0%ba%d0%be%d1%84%d0%b5-%d0%bf%d0%be%d0%b4%d0%b0%d1%8e%d1%82-%d1%81-%d0%b2%d0%be%d0%b4%d0%be%d0%b9/" class="news-link">
+                    <div class="news-image">
+                      <img src="https://zm-coffee.ru/wp-content/uploads/2023/05/news_feed_row-6.jpg" alt="">
+                    </div>
+                    <div class="news-title">
+                      <p>Почему кофе подают с водой?</p>
+                    </div>
+                  </a>
+                  <div class="news-date">
+                    <span>31.05.2023</span>
+                  </div>
+                </div>
+                
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__col footer__about">
+                <div class="logo footer__logo">
+                    <span class="logo__text">ZM Coffee</span>
+                </div>
+                <p class="footer__quote">"Кофе - это напиток, который делает ум резвым, но не утомляет тело." — Иоганн Себастьян Бах</p>
+            </div>
+            <div class="footer__col footer__nav">
+                <h3 class="footer__title">Навигация</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html#about" class="footer__link">О нас</a></li>
+                    <li><a href="index.html#menu" class="footer__link">Меню</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                    <li><a href="locations.html" class="footer__link">Кофейни</a></li>
+                    <li><a href="index.html#reviews" class="footer__link">Отзывы</a></li>
+                    <li><a href="index.html#contacts" class="footer__link">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__legal">
+                <h3 class="footer__title">Документы</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                    <li><a href="#" class="footer__link">Публичная оферта</a></li>
+                    <li><a href="#" class="footer__link">Правила посещения</a></li>
+                    <li><a href="#" class="footer__link">Франшиза</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__social">
+                <h3 class="footer__title">Соцсети</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">ВКонтакте</a></li>
+                    <li><a href="#" class="footer__link">Instagram</a></li>
+                    <li><a href="#" class="footer__link">Telegram</a></li>
+                    <li><a href="#" class="footer__link">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
